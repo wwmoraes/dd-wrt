@@ -1,0 +1,13 @@
+#!/bin/sh
+
+nvram set cron_enable=1
+nvram set cron_jobs="0 5 */7 * * root /tmp/.rc_startup"
+
+nvram set dnsmasq_options="
+addn-hosts=/tmp/mvps
+addn-hosts=/tmp/someonewhocares
+addn-hosts=/tmp/sbc
+"
+
+nvram set rc_startup="$(wget -q https://raw.githubusercontent.com/wwmoraes/dd-wrt/master/rc_startup)"
+nvram commit
