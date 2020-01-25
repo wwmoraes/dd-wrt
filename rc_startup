@@ -1,0 +1,13 @@
+# download hosts files
+wget -qO /tmp/mvps http://winhelp2002.mvps.org/hosts.txt
+wget -qO /tmp/someonewhocares http://someonewhocares.org/hosts/zero/hosts
+wget -qO /tmp/sbc https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+
+# restart dnsmasq to use right away the new hosts
+stopservice dnsmasq && startservice dnsmasq
+
+# download apps
+wget -qO /tmp/vpn https://raw.githubusercontent.com/wwmoraes/dd-wrt/master/flashrouters-private-app.sh
+
+# start apps
+sh /tmp/flashrouters-privacy-app.sh &
