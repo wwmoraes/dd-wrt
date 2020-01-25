@@ -9,5 +9,5 @@ addn-hosts=/tmp/someonewhocares
 addn-hosts=/tmp/sbc
 "
 
-nvram set rc_startup="$(wget -q https://raw.githubusercontent.com/wwmoraes/dd-wrt/master/rc_startup)"
+nvram set rc_startup="$(curl -fsSL https://raw.githubusercontent.com/wwmoraes/dd-wrt/master/rc_startup)"
 nvram commit
