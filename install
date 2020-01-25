@@ -1,13 +1,24 @@
 #!/bin/sh
 
+# printf "enabling cronjob...\n"
 nvram set cron_enable=1
-nvram set cron_jobs="0 5 */7 * * root /tmp/.rc_startup"
+# printf "setting cronjobs...\n"
+nvram set cron_jobs="0 5 */7 * * root /tmp/rc_startup"
 
+printf "setting DNSmasq options...\n"
 nvram set dnsmasq_options="
 addn-hosts=/tmp/mvps
 addn-hosts=/tmp/someonewhocares
 addn-hosts=/tmp/sbc
 "
 
-nvram set rc_startup="$(curl -fsSL https://raw.githubusercontent.com/wwmoraes/dd-wrt/master/rc_startup)"
+printf "setting startup script...\n"
+curl -fsSLo /tmp/rc_startup https://raw.githubusercontent.com/wwmoraes/dd-wrt/master/rc_startup
+nvram set rc_startup="sh /tmp/rc_startup"
+
+printf "saving NVRAM...\n"
 nvram commit
+
+# run
+printf "running startup script...\n"
+sh /tmp/rc_startup
