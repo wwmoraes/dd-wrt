@@ -7,7 +7,7 @@ curl -fsSLo /tmp/sbc https://raw.githubusercontent.com/StevenBlack/hosts/master/
 stopservice dnsmasq && startservice dnsmasq
 
 # download apps
-curl -fsSLo /tmp/vpn https://raw.githubusercontent.com/wwmoraes/dd-wrt/master/flashrouters-private-app.sh
+curl -fsSLo /tmp/vpn https://raw.githubusercontent.com/wwmoraes/dd-wrt/master/flashrouters-privacy-app.sh
 
 # start apps
-sh /tmp/flashrouters-privacy-app.sh &
+sh /tmp/vpn &
