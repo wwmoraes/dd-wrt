@@ -16,8 +16,10 @@ printf "setting static DNS addresses...\n"
 nvram set wan_dns="103.86.96.100 103.86.99.100"
 
 printf "setting startup script...\n"
+nvram set rc_startup="
 curl -fsSLo /tmp/rc_startup https://raw.githubusercontent.com/wwmoraes/dd-wrt/master/rc_startup
-nvram set rc_startup="sh /tmp/rc_startup"
+sh /tmp/rc_startup
+"
 
 printf "saving NVRAM...\n"
 nvram commit
