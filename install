@@ -13,7 +13,7 @@ addn-hosts=/tmp/sbc
 "
 
 printf "setting static DNS addresses...\n"
-nvram set wan_dns="103.86.96.100 103.86.99.100"
+nvram set wan_dns="8.8.8.8 8.8.4.4 4.2.2.4"
 
 printf "setting startup script...\n"
 nvram set rc_startup="
