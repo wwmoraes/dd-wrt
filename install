@@ -11,10 +11,12 @@ addn-hosts=/tmp/mvps
 addn-hosts=/tmp/someonewhocares
 addn-hosts=/tmp/sbc
 addn-hosts=/tmp/ios
+server=103.86.96.103
+server=103.86.99.103
 "
 
 printf "setting static DNS addresses...\n"
-nvram set wan_dns="8.8.8.8 8.8.4.4 4.2.2.4"
+nvram set wan_dns="10.0.0.1"
 
 printf "setting startup script...\n"
 nvram set rc_startup="
