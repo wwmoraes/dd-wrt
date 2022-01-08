@@ -10,6 +10,7 @@ nvram set dnsmasq_options="
 addn-hosts=/tmp/mvps
 addn-hosts=/tmp/someonewhocares
 addn-hosts=/tmp/sbc
+addn-hosts=/tmp/ios
 "
 
 printf "setting static DNS addresses...\n"
