@@ -1,8 +1,5 @@
 # download hosts files
-curl -fsSLo /tmp/mvps http://winhelp2002.mvps.org/hosts.txt
-curl -fsSLo /tmp/someonewhocares http://someonewhocares.org/hosts/zero/hosts
-curl -fsSLo /tmp/sbc https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-curl -fsSLo /tmp/ios "https://raw.githubusercontent.com/BlackJack8/iOSAdblockList/master/Regular%20Hosts.txt"
+curl -fsSLo /tmp/hosts https://raw.githubusercontent.com/wwmoraes/dd-wrt/master/build/hosts
 
 # restart dnsmasq to use right away the new hosts
 stopservice dnsmasq && startservice dnsmasq

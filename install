@@ -7,12 +7,9 @@ nvram set cron_jobs="0 5 */7 * * root /tmp/rc_startup"
 
 printf "setting DNSmasq options...\n"
 nvram set dnsmasq_options="
-addn-hosts=/tmp/mvps
-addn-hosts=/tmp/someonewhocares
-addn-hosts=/tmp/sbc
-addn-hosts=/tmp/ios
 server=103.86.96.103
 server=103.86.99.103
+addn-hosts=/tmp/hosts
 "
 
 printf "setting static DNS addresses...\n"
